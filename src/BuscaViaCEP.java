@@ -23,11 +23,8 @@ public class BuscaViaCEP {
         try {
             // Configurar o autenticador para o proxy
             String username = JOptionPane.showInputDialog(null, "Digite o usuário do proxy:");
-            JPasswordField passwordField = new JPasswordField();
-            passwordField.setEchoChar('*');
-
             String password = JOptionPane.showInputDialog(null, "Digite a senha do proxy:");
-            //String password = new String(passwordField.getPassword());
+
             Authenticator.setDefault(new Authenticator() {
                 @Override
                 protected PasswordAuthentication getPasswordAuthentication() {
@@ -41,11 +38,7 @@ public class BuscaViaCEP {
                     .authenticator(Authenticator.getDefault())
                     .build();
 
-            //HostConfiguration config = client.proxy();
-
-
             HttpRequest request = HttpRequest.newBuilder()
-
                     .uri(URI.create(endereco))
                     .build();
 
