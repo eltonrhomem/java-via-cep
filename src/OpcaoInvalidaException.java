@@ -1,13 +1,10 @@
-public class OpcaoInvalidaException extends Throwable {
-    private String message;
-
+public class OpcaoInvalidaException extends Exception {
     public OpcaoInvalidaException(String mensagem) {
-        this.message = mensagem;
-
+        super(mensagem);
     }
 
     @Override
     public String getMessage() {
-        return "Opção inválida!";
+        return super.getMessage();
     }
 }

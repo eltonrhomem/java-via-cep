@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.*;
 import java.net.http.HttpClient;
@@ -52,6 +54,17 @@ public class BuscaViaCEP {
             System.out.println(e.getMessage());
         }
         return json;
+    }
+    public void gerarArquivoJson(String payload) throws IOException {
+        try {
+            FileWriter writer = new FileWriter("payload.json", true);
+            writer.write(payload);
+            writer.close();
+
+        }
+        catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 }

@@ -37,6 +37,7 @@ public class BuscaCEPMain {
                         BuscaViaCEP cepInformado = new BuscaViaCEP(cep);
                         String reposta = cepInformado.buscaCEP();
                         System.out.println(reposta);
+                        cepInformado.gerarArquivoJson(reposta+',');
                         break;
                     case 2: System.out.println("Tchaaaaauu!!!");
                             break;
